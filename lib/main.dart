@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/networking/assignment1.dart';
+import 'package:flutter_application_1/networking/list_api.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/list_view.dart';
+import 'package:flutter_application_1/widgets/login.dart';
+import 'package:flutter_application_1/widgets/search.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +40,13 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
       // home: const CustomButton(),
-      home: const ListViewCustom(),
+      // home: const ListViewCustom(),
+      // home: const StfWidget(),
+      // home: const JokeOfTheDayViewer(),
+      // home: const CommentsViewer(),
+      // home: const StfWidget(),
+      // home: const LoginPage(),
+      home: const SearchPage(),
     );
   }
 }
@@ -158,10 +168,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // const CustomButton(),
-                    // const Image(
-                    //   image: NetworkImage(
-                    //       'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'),
-                    // ),
+                    const Image(
+                      image: NetworkImage(
+                          'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'),
+                    ),
                     const Text(
                       'You have pushed the button this many times:',
                     ),
