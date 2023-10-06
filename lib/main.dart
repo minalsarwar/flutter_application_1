@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/networking/assignment1.dart';
 import 'package:flutter_application_1/networking/list_api.dart';
+import 'package:flutter_application_1/networking/mockup.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/list_view.dart';
 import 'package:flutter_application_1/widgets/login.dart';
@@ -43,10 +44,11 @@ class MyApp extends StatelessWidget {
       // home: const ListViewCustom(),
       // home: const StfWidget(),
       // home: const JokeOfTheDayViewer(),
-      // home: const CommentsViewer(),
+      home: const CommentsViewer(),
       // home: const StfWidget(),
       // home: const LoginPage(),
-      home: const SearchPage(),
+      // home: const SearchPage(),
+      // home: const ProductList(),
     );
   }
 }
