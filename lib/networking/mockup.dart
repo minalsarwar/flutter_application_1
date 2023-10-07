@@ -393,24 +393,51 @@ class _ProductListState extends State<ProductList> {
             } else {
               List<APIDataModel> products = snapshot.data!;
               return ListView.builder(
-                // padding: const EdgeInsets.only(8),
                 itemCount: products.length,
                 itemBuilder: (context, index) {
+                  //text size based on screen width
+                  double fontSize =
+                      MediaQuery.of(context).size.width < 600 ? 10 : 14;
+
+                  //image size based on screen width
+                  double imageSize =
+                      MediaQuery.of(context).size.width < 600 ? 60 : 80;
+
+                  //price font size based on screen width
+                  double priceFontSize =
+                      MediaQuery.of(context).size.width < 600 ? 10 : 14;
+
                   return ListTile(
-                    leading: Image.network(products[index].imageLink ?? ''),
+                    leading: Image.network(
+                      products[index].imageLink ?? '',
+                      width: imageSize,
+                      height: imageSize,
+                    ),
                     title: Row(
-                      mainAxisAlignment: MainAxisAlignment
-                          .spaceBetween, // Align items to the start and end
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(products[index].name ?? ''),
-                        Text('\$ ${products[index].price ?? ''}'),
+                        Text(
+                          products[index].name ?? '',
+                          style: TextStyle(
+                            fontSize: fontSize,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '\$ ${products[index].price ?? ''}',
+                          style: TextStyle(
+                            fontSize: priceFontSize,
+                          ),
+                        ),
                       ],
                     ),
                     onTap: () {
                       showModalBottomSheet(
                         context: context,
+                        // isScrollControlled: true,
                         builder: (context) {
                           return Container(
+                            width: MediaQuery.of(context).size.width * 1,
                             padding: const EdgeInsets.all(8),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -480,7 +507,7 @@ class _ProductListState extends State<ProductList> {
                                     RichText(
                                       text: TextSpan(
                                         children: [
-                                          TextSpan(
+                                          const TextSpan(
                                             text: 'Rating: ',
                                             style: TextStyle(
                                               fontSize: 12,
@@ -489,7 +516,7 @@ class _ProductListState extends State<ProductList> {
                                           TextSpan(
                                             text:
                                                 '${products[index].rating ?? ''}',
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               fontSize: 12,
                                               color: Colors.red,
                                             ),
