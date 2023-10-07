@@ -194,7 +194,7 @@ class _ProductListState extends State<ProductList> {
                         showModalBottomSheet(
                           context: context,
                           // isScrollControlled:
-                          //     true, // This makes the bottom sheet full-screen on small devices
+                          //     true,
                           builder: (context) {
                             return SingleChildScrollView(
                               child: Container(
