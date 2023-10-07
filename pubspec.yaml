@@ -66,8 +66,8 @@ flutter:
     # - images/a_dot_ham.jpeg
     - android/assets/logo.png
     - android/assets/stars.png
-    - android/assets/weightmachine.jpg
-    - android/assets/perfume.png
+    # - android/assets/weightmachine.jpg
+    # - android/assets/perfume.png
     - android/assets/headphones.png
     - android/assets/naturelogo.png
 
