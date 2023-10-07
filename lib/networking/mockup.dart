@@ -193,120 +193,124 @@ class _ProductListState extends State<ProductList> {
                       onTap: () {
                         showModalBottomSheet(
                           context: context,
-                          // isScrollControlled: true,
+                          // isScrollControlled:
+                          //     true, // This makes the bottom sheet full-screen on small devices
                           builder: (context) {
-                            return Container(
-                              // width: MediaQuery.of(context).size.width * 0.8,
-                              padding: const EdgeInsets.all(8),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Image.network(
-                                        products[index].imageLink ?? '',
-                                        width: 80,
-                                        height: 80,
-                                      ),
-                                      const SizedBox(width: 12),
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              products[index].name ?? '',
-                                              style: const TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            Text(
-                                              products[index].description ?? '',
-                                              style: const TextStyle(
-                                                fontSize: 12,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Brand: ${products[index].brand ?? ''}',
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Price: \$${products[index].price ?? ''}',
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Product Type: ${products[index].productType ?? ''}',
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      RichText(
-                                        text: TextSpan(
-                                          children: [
-                                            const TextSpan(
-                                              text: 'Rating: ',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text:
-                                                  '${products[index].rating ?? ''}',
-                                              style: const TextStyle(
-                                                fontSize: 12,
-                                                color: Colors.red,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 12),
-                                  if (products[index].productColors != null)
+                            return SingleChildScrollView(
+                              child: Container(
+                                padding: const EdgeInsets.all(8),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        for (ProductColors color
-                                            in products[index].productColors!)
-                                          Container(
-                                            width: 16,
-                                            height: 16,
-                                            margin:
-                                                const EdgeInsets.only(left: 8),
-                                            decoration: BoxDecoration(
-                                              color: Color(int.parse(
-                                                  '0xFF${color.hexValue!.replaceAll('#', '')}')),
-                                              shape: BoxShape.circle,
-                                            ),
+                                        Image.network(
+                                          products[index].imageLink ?? '',
+                                          width: 80,
+                                          height: 80,
+                                        ),
+                                        const SizedBox(width: 12),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                products[index].name ?? '',
+                                                style: const TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              Text(
+                                                products[index].description ??
+                                                    '',
+                                                style: const TextStyle(
+                                                  fontSize: 12,
+                                                ),
+                                              ),
+                                            ],
                                           ),
+                                        ),
                                       ],
                                     ),
-                                ],
+                                    const SizedBox(height: 10),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Brand: ${products[index].brand ?? ''}',
+                                          style: const TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Price: \$${products[index].price ?? ''}',
+                                          style: const TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Product Type: ${products[index].productType ?? ''}',
+                                          style: const TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        RichText(
+                                          text: TextSpan(
+                                            children: [
+                                              const TextSpan(
+                                                text: 'Rating: ',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text:
+                                                    '${products[index].rating ?? ''}',
+                                                style: const TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.red,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(height: 12),
+                                    if (products[index].productColors != null)
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          for (ProductColors color
+                                              in products[index].productColors!)
+                                            Container(
+                                              width: 16,
+                                              height: 16,
+                                              margin: const EdgeInsets.only(
+                                                  left: 8),
+                                              decoration: BoxDecoration(
+                                                color: Color(int.parse(
+                                                    '0xFF${color.hexValue!.replaceAll('#', '')}')),
+                                                shape: BoxShape.circle,
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                  ],
+                                ),
                               ),
                             );
                           },
