@@ -73,7 +73,7 @@ class _CommentsViewerState extends State<CommentsViewer> {
               itemBuilder: (context, index) {
                 return Card(
                   elevation: 1,
-                  margin: const EdgeInsets.all(2), // Add margin for spacing
+                  margin: const EdgeInsets.all(2),
                   child: ListTile(
                     leading: CircleAvatar(
                       backgroundColor: Colors.blue,
@@ -90,7 +90,6 @@ class _CommentsViewerState extends State<CommentsViewer> {
                         context: context,
                         builder: (context) {
                           return Container(
-                            height: 300,
                             padding: const EdgeInsets.all(16),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
