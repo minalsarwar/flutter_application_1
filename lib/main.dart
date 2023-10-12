@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
       // home: const CustomButton(),
       // home: const ListViewCustom(),
-      // home: const GridProductList(),
+      home: const GridProductList(),
       // home: const PexelsImageGallery(),
-      home: const ProductList(),
+      // home: const ProductList(),
     );
   }
 }

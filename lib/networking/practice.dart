@@ -261,8 +261,42 @@ class _GridProductListState extends State<GridProductList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.pink[200], // Change the color as needed
+        child: Row(
+          mainAxisAlignment:
+              MainAxisAlignment.spaceAround, // Adjust alignment as needed
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {
+                // Add functionality for the home button
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                // Add functionality for the search button
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.favorite),
+              onPressed: () {
+                // Add functionality for the favorite button
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.person),
+              onPressed: () {
+                // Add functionality for the profile button
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
-        leading: const Icon(Icons.menu, color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
+        // leading: const Icon(Icons.menu, color: Colors.white),
         title: const Text(
           'Products',
           textAlign: TextAlign.center,
@@ -271,7 +305,7 @@ class _GridProductListState extends State<GridProductList> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.pink[300],
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -282,6 +316,78 @@ class _GridProductListState extends State<GridProductList> {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            // Drawer header with your logo or other content
+            DrawerHeader(
+              // Your logo or header content can go here
+              child: Image.network(
+                'https://icon-library.com/images/female-user-icon/female-user-icon-8.jpg',
+                width: 10.0,
+                height: 10.0,
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                // Handle the Home option tap
+                // Navigator.pop(context); // Closes the drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Update Profile'),
+              onTap: () {
+                // Handle the Update Profile option tap
+                // Navigator.pop(context); // Closes the drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.report),
+              title: Text('Report a Problem'),
+              onTap: () {
+                // Handle the Report a Problem option tap
+                // Navigator.pop(context); // Closes the drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.account_balance_wallet),
+              title: Text('Wallet'),
+              onTap: () {
+                // Handle the Wallet option tap
+                // Navigator.pop(context); // Closes the drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.shop),
+              title: Text('Amal Marketplace'),
+              onTap: () {
+                // Handle the Amal Marketplace option tap
+                // Navigator.pop(context); // Closes the drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.person_add),
+              title: Text('Invite a Friend'),
+              onTap: () {
+                // Handle the Invite a Friend option tap
+                // Navigator.pop(context); // Closes the drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: () {
+                // Handle the Logout option tap
+                // Navigator.pop(context); // Closes the drawer
+              },
+            ),
+          ],
+        ),
       ),
       body: Material(
         type: MaterialType.transparency,
