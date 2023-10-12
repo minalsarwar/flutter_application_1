@@ -43,10 +43,10 @@ class MyApp extends StatelessWidget {
       // home: const ListViewCustom(),
       // home: const StfWidget(),
       // home: const JokeOfTheDayViewer(),
-      // home: const CommentsViewer(),
+      home: const CommentsViewer(),
       // home: const StfWidget(),
       // home: const LoginPage(),
-      home: const SearchPage(),
+      // home: const SearchPage(),
     );
   }
 }

@@ -59,7 +59,7 @@ class CustomButton extends StatelessWidget {
                     child: const Text('Filled Tonal'),
                   ),
                 ),
-                const SizedBox(width: 110),
+                const SizedBox(width: 100),
                 SizedBox(
                   // width: MediaQuery.sizeOf(context).width,
                   child: FilledButton.tonal(
