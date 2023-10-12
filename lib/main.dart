@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/networking/practice.dart';
 import 'package:flutter_application_1/networking/practice1.dart';
+import 'package:flutter_application_1/networking/practice2.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/list_view.dart';
 
@@ -11,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,8 +39,9 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
       // home: const CustomButton(),
       // home: const ListViewCustom(),
-      home: const GridProductList(),
+      // home: const GridProductList(),
       // home: const PexelsImageGallery(),
+      home: const ProductList(),
     );
   }
 }
