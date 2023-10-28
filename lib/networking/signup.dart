@@ -44,7 +44,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 fit: BoxFit.cover,
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -53,7 +53,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     'Sign up',
                     style: TextStyle(
                       fontSize: 22.0,
-                      color: Colors.black,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white // Text color for dark mode
+                          : Colors.black, // Text color for light mode
                     ),
                   ),
                 ],
