@@ -13,7 +13,7 @@ class DataClass extends ChangeNotifier {
     post = (await fetchProducts());
     loading = false;
 
-    // notifyListeners();
+    notifyListeners();
   }
 
   Future<List<APIDataModel>> fetchProducts() async {

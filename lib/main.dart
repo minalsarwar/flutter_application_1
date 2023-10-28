@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/networking/login.dart';
 import 'package:flutter_application_1/networking/practice.dart';
-import 'package:flutter_application_1/networking/practice1.dart';
-import 'package:flutter_application_1/networking/practice2.dart';
 import 'package:flutter_application_1/networking/provider_class.dart';
-import 'package:flutter_application_1/networking/signup.dart';
-import 'package:flutter_application_1/widgets/button.dart';
-import 'package:flutter_application_1/widgets/list_view.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,6 +20,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent)),
           home: const GridProductList(),
         ));
+
     // return MaterialApp(
     //   title: 'Flutter Demo',
     //   // theme: ThemeData(
