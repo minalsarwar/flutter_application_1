@@ -1,125 +1,5 @@
-// import 'package:flutter/material.dart';
-
-// class LoginPage extends StatelessWidget {
-//   const LoginPage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SingleChildScrollView(
-//         child: Column(
-//           children: <Widget>[
-//             Container(
-//               width: double.infinity,
-//               child: Image.asset(
-//                 'android/assets/asset1.jpg',
-//                 fit: BoxFit.cover,
-//               ),
-//             ),
-//             const Padding(
-//               padding: EdgeInsets.all(20.0),
-//               child: Row(
-//                 mainAxisAlignment: MainAxisAlignment.start,
-//                 children: [
-//                   Text(
-//                     'Log In',
-//                     style: TextStyle(
-//                       fontSize: 22.0,
-//                       color: Colors.black,
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             SizedBox(
-//               width: double.infinity,
-//               child: Padding(
-//                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-//                 child: TextField(
-//                   maxLength: 50,
-//                   decoration: InputDecoration(
-//                     labelText: 'Email',
-//                     contentPadding: EdgeInsets.symmetric(
-//                         horizontal: 10.0,
-//                         vertical: 15.0), // Adjust vertical padding
-//                     border: OutlineInputBorder(
-//                       borderRadius: BorderRadius.circular(10.0),
-//                       borderSide: BorderSide(color: Colors.black, width: 1.0),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//             SizedBox(
-//               width: double.infinity,
-//               child: Padding(
-//                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-//                 child: TextField(
-//                   maxLength: 20,
-//                   obscureText: true,
-//                   decoration: InputDecoration(
-//                     labelText: 'Password',
-//                     contentPadding: EdgeInsets.symmetric(
-//                         horizontal: 10.0,
-//                         vertical: 15.0), // Adjust vertical padding
-//                     border: OutlineInputBorder(
-//                       borderRadius: BorderRadius.circular(10.0),
-//                       borderSide: BorderSide(color: Colors.black, width: 1.0),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//             Padding(
-//               padding: const EdgeInsets.symmetric(
-//                   horizontal: 25.0,
-//                   vertical: 10.0), // Reduce vertical padding here
-//               child: SizedBox(
-//                 width: double.infinity,
-//                 height: 45,
-//                 child: ElevatedButton(
-//                   onPressed: () {
-//                     // Handle login button press
-//                   },
-//                   style: ElevatedButton.styleFrom(
-//                     backgroundColor: Color.fromARGB(255, 102, 88, 160),
-//                     shape: RoundedRectangleBorder(
-//                       borderRadius: BorderRadius.circular(30.0),
-//                     ),
-//                   ),
-//                   child: Text(
-//                     'Sign In',
-//                     style: TextStyle(
-//                       color: Colors.white,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//             const SizedBox(height: 10),
-//             Align(
-//               alignment: Alignment.centerLeft,
-//               child: Padding(
-//                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-//                 child: Text("Don't have an account yet? Sign Up!"),
-//               ),
-//             ),
-//             const SizedBox(height: 10),
-//             Align(
-//               alignment: Alignment.centerLeft,
-//               child: Padding(
-//                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
-//                 child: Text("Forgot Password?"),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/networking/signup.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -131,7 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
-  bool isEmailTooLong = false; // Track if email is too long
+  bool isEmailTooLong = false;
 
   @override
   void dispose() {
@@ -174,8 +54,8 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       fontSize: 22.0,
                       color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white // Text color for dark mode
-                          : Colors.black, // Text color for light mode
+                          ? Colors.white
+                          : Colors.black,
                     ),
                   ),
                 ],
@@ -217,11 +97,8 @@ class _LoginPageState extends State<LoginPage> {
                   '${emailController.text.length}/50',
                   style: TextStyle(
                     color: Theme.of(context).brightness == Brightness.dark
-                        ? Color.fromARGB(
-                            255, 196, 189, 189) // Text color for dark mode
-
-                        : Color.fromARGB(
-                            226, 86, 86, 86), // Text color for light mode
+                        ? Color.fromARGB(255, 196, 189, 189)
+                        : Color.fromARGB(226, 86, 86, 86),
                     fontSize: 12,
                   ),
                 ),
@@ -255,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 45,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Handle login button press
+                    Navigator.pushNamed(context, '/homepage');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 102, 88, 160),
@@ -273,13 +150,26 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 10),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Text("Don't have an account yet? Sign Up!"),
+            Padding(
+              padding: EdgeInsets.only(left: 20.0),
+              child: Row(
+                children: <Widget>[
+                  Text("Don't have an account yet? "),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/signup');
+                    },
+                    child: Text(
+                      "Sign Up!",
+                      style: TextStyle(
+                        color: Colors.purple[300],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
+
             const SizedBox(height: 10),
             Align(
               alignment: Alignment.centerLeft,

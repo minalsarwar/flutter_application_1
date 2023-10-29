@@ -11,7 +11,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController emailController = TextEditingController();
-  bool isEmailTooLong = false; // Track if email is too long
+  bool isEmailTooLong = false;
 
   @override
   void dispose() {
@@ -54,8 +54,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: TextStyle(
                       fontSize: 22.0,
                       color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white // Text color for dark mode
-                          : Colors.black, // Text color for light mode
+                          ? Colors.white
+                          : Colors.black,
                     ),
                   ),
                 ],
@@ -97,11 +97,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   '${emailController.text.length}/50',
                   style: TextStyle(
                     color: Theme.of(context).brightness == Brightness.dark
-                        ? Color.fromARGB(
-                            255, 196, 189, 189) // Text color for dark mode
-
-                        : Color.fromARGB(
-                            226, 86, 86, 86), // Text color for light mode
+                        ? Color.fromARGB(255, 196, 189, 189)
+                        : Color.fromARGB(226, 86, 86, 86),
                     fontSize: 12,
                   ),
                 ),
@@ -157,7 +154,9 @@ class _SignUpPageState extends State<SignUpPage> {
                 width: double.infinity,
                 height: 45,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.pushNamed(context, '/login');
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 102, 88, 160),
                     shape: RoundedRectangleBorder(
@@ -174,11 +173,23 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             ),
             const SizedBox(height: 10),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Text("Have an account? Log In"),
+            Padding(
+              padding: EdgeInsets.only(left: 20.0),
+              child: Row(
+                children: <Widget>[
+                  Text("Have an account? "),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    child: Text(
+                      "Log In",
+                      style: TextStyle(
+                        color: Colors.purple[300],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/networking/practice.dart';
-import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
 class DataClass extends ChangeNotifier {

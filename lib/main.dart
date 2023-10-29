@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/networking/homepage.dart';
 import 'package:flutter_application_1/networking/login.dart';
 import 'package:flutter_application_1/networking/practice.dart';
 import 'package:flutter_application_1/networking/practice1.dart';
@@ -18,56 +19,62 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-        create: (context) => DataClass(),
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent)),
-          home: const GridProductList(),
-        ));
-    // return MaterialApp(
-    //   title: 'Flutter Demo',
-    //   // theme: ThemeData(
-    //   //   // This is the theme of your application.
-    //   //   //
-    //   //   // TRY THIS: Try running your application with "flutter run". You'll see
-    //   //   // the application has a blue toolbar. Then, without quitting the app,
-    //   //   // try changing the seedColor in the colorScheme below to Colors.green
-    //   //   // and then invoke "hot reload" (save your changes or press the "hot
-    //   //   // reload" button in a Flutter-supported IDE, or press "r" if you used
-    //   //   // the command line to start the app).
-    //   //   //
-    //   //   // Notice that the counter didn't reset back to zero; the application
-    //   //   // state is not lost during the reload. To reset the state, use hot
-    //   //   // restart instead.
-    //   //   //
-    //   //   // This works for code too, not just values: Most code changes can be
-    //   //   // tested with just a hot reload.
-    //   //   colorScheme:
-    //   //       ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 226, 182, 220)),
-    //   //   useMaterial3: true,
-    //   // ),
-    //   theme: ThemeData(
-    //     primarySwatch: Colors.blue, // Light theme
-    //   ),
-    //   //Adding dark theme
-    //   darkTheme: ThemeData.dark().copyWith(
-    //     primaryColor:
-    //         Color.fromARGB(255, 90, 85, 85), // Change the primary color
-    //   ),
+    // return ChangeNotifierProvider(
+    //     create: (context) => DataClass(),
+    //     child: MaterialApp(
+    //       title: 'Flutter Demo',
+    //       theme: ThemeData(
+    //           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent)),
+    //       home: const GridProductList(),
+    //     ));
+    return MaterialApp(
+      title: 'Flutter Demo',
+      // theme: ThemeData(
+      //   // This is the theme of your application.
+      //   //
+      //   // TRY THIS: Try running your application with "flutter run". You'll see
+      //   // the application has a blue toolbar. Then, without quitting the app,
+      //   // try changing the seedColor in the colorScheme below to Colors.green
+      //   // and then invoke "hot reload" (save your changes or press the "hot
+      //   // reload" button in a Flutter-supported IDE, or press "r" if you used
+      //   // the command line to start the app).
+      //   //
+      //   // Notice that the counter didn't reset back to zero; the application
+      //   // state is not lost during the reload. To reset the state, use hot
+      //   // restart instead.
+      //   //
+      //   // This works for code too, not just values: Most code changes can be
+      //   // tested with just a hot reload.
+      //   colorScheme:
+      //       ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 226, 182, 220)),
+      //   useMaterial3: true,
+      // ),
+      theme: ThemeData(
+        primarySwatch: Colors.blue, // Light theme
+      ),
+      //Adding dark theme
+      darkTheme: ThemeData.dark().copyWith(
+        primaryColor:
+            Color.fromARGB(255, 90, 85, 85), // Change the primary color
+      ),
 
-    //   //System's theme setting or use the light/dark theme explicitly.
-    //   themeMode: ThemeMode.system, // Or use ThemeMode.light or ThemeMode.dark
-    //   // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
-    //   // home: const CustomButton(),
-    //   // home: const ListViewCustom(),
-    //   home: const GridProductList(),
-    //   // home: const PexelsImageGallery(),
-    //   // home: const ProductList(),
-    //   // home: LoginPage(),
-    //   // home: SignUpPage(),
-    // );
+      //System's theme setting or use the light/dark theme explicitly.
+      themeMode: ThemeMode.dark, // Or use ThemeMode.light or ThemeMode.dark
+      // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
+      // home: const CustomButton(),
+      // home: const ListViewCustom(),
+      // home: const GridProductList(),
+      // home: const PexelsImageGallery(),
+      // home: const ProductList(),
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/signup': (context) => SignUpPage(),
+        '/homepage': (context) => DummyHomePage(),
+      },
+      initialRoute: '/login',
+      home: LoginPage(),
+      // home: SignUpPage(),
+    );
   }
 }
 
