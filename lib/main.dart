@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/networking/homepage.dart';
 import 'package:flutter_application_1/networking/login.dart';
 import 'package:flutter_application_1/networking/signup.dart';
 
@@ -41,8 +42,14 @@ class MyApp extends StatelessWidget {
         primaryColor: Color.fromARGB(255, 90, 85, 85),
       ),
 
-      themeMode: ThemeMode.light, // Or use ThemeMode.light or ThemeMode.dark
+      themeMode: ThemeMode.system, // Or use ThemeMode.light or ThemeMode.dark
       // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/signup': (context) => SignUpPage(),
+        '/homepage': (context) => DummyHomePage(),
+      },
+      initialRoute: '/login',
       home: LoginPage(),
       // home: SignUpPage(),
     );
