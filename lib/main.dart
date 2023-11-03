@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
       ),
 
       //System's theme setting or use the light/dark theme explicitly.
-      themeMode: ThemeMode.dark, // Or use ThemeMode.light or ThemeMode.dark
+      themeMode: ThemeMode.system, // Or use ThemeMode.light or ThemeMode.dark
       // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
       // home: const CustomButton(),
       // home: const ListViewCustom(),
