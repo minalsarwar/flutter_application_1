@@ -1,11 +1,31 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/firebase_options.dart';
+import 'package:flutter_application_1/networking/app_state.dart';
 import 'package:flutter_application_1/networking/homepage.dart';
 import 'package:flutter_application_1/networking/login.dart';
 import 'package:flutter_application_1/networking/signup.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+//new
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase based on the current platform (web or other).
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => ApplicationState(),
+    builder: ((context, child) => const MyApp()),
+  ));
 }
+
+// void main() {
+//   runApp(const MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -49,9 +69,9 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => SignUpPage(),
         '/homepage': (context) => DummyHomePage(),
       },
-      initialRoute: '/login',
-      home: LoginPage(),
-      // home: SignUpPage(),
+      initialRoute: '/signup',
+      // home: LoginPage(),
+      home: SignUpPage(),
     );
   }
 }
