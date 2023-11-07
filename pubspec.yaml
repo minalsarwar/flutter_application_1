@@ -62,9 +62,43 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - android/assets/asset1.jpg
-    - android/assets/asset2.jpg
-    - android/assets/asset3.jpg
+    - android/assets/morning.jpg
+    - android/assets/evening.jpg
+    - android/assets/beforeSleep.jpg
+    - android/assets/salah.jpg
+    - android/assets/afterSalah.jpg
+    - android/assets/praisesofAllah.jpg
+    - android/assets/salawat.jpg
+    - android/assets/quranicDuas.jpg
+    - android/assets/sunnahDuas.jpg
+    - android/assets/istagfar.jpg
+    - android/assets/dhikr.jpg
+    - android/assets/namesofAllah.jpg
+    - android/assets/ruqyah.jpg
+    - android/assets/namesAllah.jpg
+    - android/assets/wakingup.jpg
+    - android/assets/clothes.jpg
+    - android/assets/death.jpg
+    - android/assets/emotions.jpg
+    - android/assets/food.jpg
+    - android/assets/gatherings.jpg
+    - android/assets/hajj.jpg
+    - android/assets/home.jpg
+    - android/assets/istikhara.jpg
+    - android/assets/iman.jpg
+    - android/assets/marriage.jpg
+    - android/assets/masjid.jpg
+    - android/assets/nature.jpg
+    - android/assets/nightmares.jpg
+    - android/assets/shopping.jpg
+    - android/assets/social.jpg
+    - android/assets/travel.jpg
+    - android/assets/wudu.jpg
+    - android/assets/appLogo.png
+    
+
+
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

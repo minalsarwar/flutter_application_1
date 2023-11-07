@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/networking/homepage.dart';
-import 'package:flutter_application_1/networking/login.dart';
-import 'package:flutter_application_1/networking/practice.dart';
 import 'package:flutter_application_1/networking/practice1.dart';
-import 'package:flutter_application_1/networking/practice2.dart';
-import 'package:flutter_application_1/networking/provider_class.dart';
-import 'package:flutter_application_1/networking/signup.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/list_view.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -61,19 +55,7 @@ class MyApp extends StatelessWidget {
       //System's theme setting or use the light/dark theme explicitly.
       themeMode: ThemeMode.system, // Or use ThemeMode.light or ThemeMode.dark
       // home: const MyHomePage(title: 'Flutter Demo Home Page: Minal'),
-      // home: const CustomButton(),
-      // home: const ListViewCustom(),
-      // home: const GridProductList(),
-      // home: const PexelsImageGallery(),
-      // home: const ProductList(),
-      routes: {
-        '/login': (context) => LoginPage(),
-        '/signup': (context) => SignUpPage(),
-        '/homepage': (context) => DummyHomePage(),
-      },
-      initialRoute: '/login',
-      home: LoginPage(),
-      // home: SignUpPage(),
+      home: const HomeScreen(),
     );
   }
 }
