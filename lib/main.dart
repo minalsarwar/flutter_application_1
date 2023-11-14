@@ -2,15 +2,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/networking/app_state.dart';
+import 'package:flutter_application_1/networking/form.dart';
 import 'package:flutter_application_1/networking/homepage.dart';
 import 'package:flutter_application_1/networking/login.dart';
 import 'package:flutter_application_1/networking/signup.dart';
+import 'package:flutter_application_1/networking/students_form.dart';
 import 'package:provider/provider.dart';
-
-//new
+import 'package:google_sign_in/google_sign_in.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  //GoogleSignIn().init();
 
   // Initialize Firebase based on the current platform (web or other).
   await Firebase.initializeApp(
@@ -22,10 +25,6 @@ Future<void> main() async {
     builder: ((context, child) => const MyApp()),
   ));
 }
-
-// void main() {
-//   runApp(const MyApp());
-// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -72,6 +71,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/signup',
       // home: LoginPage(),
       home: SignUpPage(),
+      // home: FirestoreForm(),
+      // home: StudentsForm(),
     );
   }
 }

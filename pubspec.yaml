@@ -41,6 +41,11 @@ dependencies:
   firebase_auth: ^4.12.1
   cloud_firestore: ^4.12.2
   firebase_ui_auth: ^1.9.1
+  font_awesome_flutter: ^10.6.0
+  material_design_icons_flutter: ^7.0.7296
+  google_sign_in: ^6.1.6
+  flutter_facebook_auth: ^6.0.2
+  flutter_login_facebook: ^1.9.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +74,8 @@ flutter:
     - android/assets/asset1.jpg
     - android/assets/asset2.jpg
     - android/assets/asset3.jpg
+    - android/assets/googleLogo.png
+    - android/assets/facebook.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

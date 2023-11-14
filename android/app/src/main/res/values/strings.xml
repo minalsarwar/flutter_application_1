@@ -1,0 +1,13 @@
+<!-- 
+<com.facebook.login.widget.LoginButton
+    android:id="@+id/login_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp" />  -->
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<resources>
+    <string name="facebook_app_id">1395411308044095</string>
+    <string name="facebook_client_token">a2e08bf30cec8ceff0c32414f53db57d</string>
+</resources>

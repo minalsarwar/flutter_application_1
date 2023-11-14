@@ -117,8 +117,9 @@ class DummyHomePage extends StatelessWidget {
             const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () async {
-                await appState.signOut();
-                Navigator.pushNamed(context, '/login');
+                // await appState.signOut();
+                await appState.signOut(context);
+                // Navigator.pushNamed(context, '/login');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 102, 88, 160),

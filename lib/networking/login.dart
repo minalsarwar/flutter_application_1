@@ -190,9 +190,13 @@
 //   }
 // }
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:provider/provider.dart';
 import 'app_state.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -377,7 +381,206 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            // Google icon button
+            // Padding(
+            //   padding:
+            //       const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+            //   child: SizedBox(
+            //     width: double.infinity,
+            //     height: 45,
+            //     child: InkWell(
+            //       // onTap: () async {
+            //       //   // Access the application state using Provider
+            //       //   ApplicationState appState =
+            //       //       Provider.of<ApplicationState>(context, listen: false);
+
+            //       //   // Call the signInWithGoogle method from app_state.dart
+            //       //   UserCredential? userCredential =
+            //       //       await appState.signInWithGoogle();
+
+            //       //   if (userCredential != null) {
+            //       //     // Handle sign-in success or navigate to the appropriate screen
+            //       //     // For example, you can navigate to the home page:
+            //       //     print("sign in");
+            //       //     Navigator.pushNamed(context, '/homepage');
+            //       //   } else {
+            //       //     // Handle sign-in failure or cancellation
+            //       //     print('Google Sign-In failed or canceled.');
+            //       //   }
+            //       // },
+            //       onTap: () async {
+            //         // print('hello 123');
+            //         // Access the application state using Provider
+            //         // ApplicationState appState =
+            //         //     Provider.of<ApplicationState>(context, listen: false);
+
+            //         // try {
+            //         //   // Call the signInWithGoogle method from app_state.dart
+            //         //   String? userCredential =
+            //         //       await appState.signInwithGoogle();
+
+            //         //   if (userCredential != null) {
+            //         //     // Handle sign-in success or navigate to the appropriate screen
+            //         //     // For example, you can navigate to the home page:
+            //         //     print("User signed in: ${userCredential}");
+            //         //     Navigator.pushNamed(context, '/homepage');
+            //         //   } else {
+            //         //     // Handle sign-in failure or cancellation
+            //         //     print('Google Sign-In failed or canceled.');
+            //         //   }
+            //         // } catch (e) {
+            //         //   // Handle any errors that occur during the sign-in process
+            //         //   print('Error signing in with Google: $e');
+            //         // }
+
+            //         // await ApplicationState().signOut();
+
+            //         // await ApplicationState().signInwithGoogle();
+            //         ApplicationState appState =
+            //             Provider.of<ApplicationState>(context, listen: false);
+
+            //         try {
+            //           // Call the signInWithGoogle method from app_state.dart
+            //           UserCredential? userCredential =
+            //               await appState.signInwithGoogle();
+
+            //           if (userCredential != null) {
+            //             // Extract user information
+            //             String? userEmail = userCredential.user?.email;
+
+            //             // Print user's email on the console
+            //             print("User signed in: $userEmail");
+
+            //             // Navigate to the homepage
+            //             Navigator.pushNamed(context, '/homepage');
+            //           } else {
+            //             // Handle sign-in failure or cancellation
+            //             print('Google Sign-In failed or canceled.');
+            //           }
+            //         } catch (e) {
+            //           // Handle any errors that occur during the sign-in process
+            //           print('Error signing in with Google: $e');
+            //         }
+            //       },
+
+            //       child: Card(
+            //         color: Colors.white,
+            //         elevation: 5.0,
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(30.0),
+            //         ),
+            //         child: Padding(
+            //           padding: const EdgeInsets.all(10.0),
+            //           child: Row(
+            //             mainAxisAlignment: MainAxisAlignment.center,
+            //             children: [
+            //               Image.asset(
+            //                 'android/assets/googleLogo.png', // Replace with the actual path
+            //                 height: 30.0,
+            //                 width: 30.0,
+            //               ),
+            //               SizedBox(width: 10.0),
+            //               Text(
+            //                 'Sign In with Google',
+            //                 style: TextStyle(
+            //                   color: Colors.black,
+            //                   fontSize: 16.0,
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            //////////
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+              child: SizedBox(
+                width: double.infinity,
+                height: 45,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    // Google Sign-In Button
+                    InkWell(
+                      onTap: () async {
+                        ApplicationState appState =
+                            Provider.of<ApplicationState>(context,
+                                listen: false);
+
+                        try {
+                          // Call the signInWithGoogle method from app_state.dart
+                          UserCredential? userCredential =
+                              await appState.signInwithGoogle();
+
+                          if (userCredential != null) {
+                            // Extract user information
+                            String? userEmail = userCredential.user?.email;
+
+                            // Print user's email on the console
+                            print("User signed in: $userEmail");
+
+                            // Navigate to the homepage
+                            Navigator.pushNamed(context, '/homepage');
+                          } else {
+                            // Handle sign-in failure or cancellation
+                            print('Google Sign-In failed or canceled.');
+                          }
+                        } catch (e) {
+                          // Handle any errors that occur during the sign-in process
+                          print('Error signing in with Google: $e');
+                        }
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20.0,
+                        child: Image.asset(
+                          'android/assets/googleLogo.png',
+                          height: 40.0,
+                          width: 40.0,
+                        ),
+                      ),
+                    ),
+
+                    // Facebook Sign-In Button
+                    InkWell(
+                      onTap: () async {
+                        // ApplicationState appState =
+                        //     Provider.of<ApplicationState>(context,
+                        //         listen: false);
+                        // await appState.signInWithFacebook(context);
+                        ApplicationState appState =
+                            Provider.of<ApplicationState>(context,
+                                listen: false);
+
+                        bool success =
+                            await appState.signInWithFacebook(context);
+
+                        if (success) {
+                          // Navigate to the homepage
+                          Navigator.pushReplacementNamed(context, '/homepage');
+                          print('Welcome to Facebook!');
+                        }
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20.0,
+                        child: Image.asset(
+                          'android/assets/facebook.png', // Replace with the actual path
+                          height: 30.0,
+                          width: 30.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
             Padding(
               padding: EdgeInsets.only(left: 20.0),
               child: Row(
