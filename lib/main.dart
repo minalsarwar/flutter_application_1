@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/networking/homepage.dart';
-import 'package:flutter_application_1/networking/login.dart';
-import 'package:flutter_application_1/networking/practice.dart';
-import 'package:flutter_application_1/networking/practice1.dart';
-import 'package:flutter_application_1/networking/practice2.dart';
-import 'package:flutter_application_1/networking/provider_class.dart';
-import 'package:flutter_application_1/networking/signup.dart';
+import 'package:flutter_application_1/user/user_view.dart';
 import 'package:flutter_application_1/widgets/button.dart';
 import 'package:flutter_application_1/widgets/list_view.dart';
 import 'package:provider/provider.dart';
+import 'package:riverpod/riverpod.dart';
 
 void main() {
   runApp(const MyApp());
@@ -66,14 +61,17 @@ class MyApp extends StatelessWidget {
       // home: const GridProductList(),
       // home: const PexelsImageGallery(),
       // home: const ProductList(),
-      routes: {
-        '/login': (context) => LoginPage(),
-        '/signup': (context) => SignUpPage(),
-        '/homepage': (context) => DummyHomePage(),
-      },
-      initialRoute: '/login',
-      home: LoginPage(),
-      // home: SignUpPage(),
+
+      // routes: {
+      //   '/login': (context) => LoginPage(),
+      //   '/signup': (context) => SignUpPage(),
+      //   '/homepage': (context) => DummyHomePage(),
+      // },
+      // initialRoute: '/login',
+      // home: LoginPage(),
+      // home: SignUpPage()
+
+      home: const UserProfile(),
     );
   }
 }

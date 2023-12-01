@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+
+class UserProfile extends StatefulWidget {
+  const UserProfile({super.key});
+
+  @override
+  State<UserProfile> createState() => _UserProfileState();
+}
+
+class _UserProfileState extends State<UserProfile> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Center(
+        child: Text(
+          'Riverpod Tutorial',
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
+    );
+  }
+}
