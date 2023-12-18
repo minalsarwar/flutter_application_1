@@ -10,7 +10,7 @@ class UserRepository {
     return userApiClient.fetchuser();
   }
 
-  Future<List<User>> getUserMoc() async {
-    return userApiClient.fetchUserMoc();
-  }
+  // Future<List<User>> getUserMoc() async {
+  //   return userApiClient.fetchUserMoc();
+  // }
 }

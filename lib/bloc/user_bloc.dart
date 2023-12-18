@@ -11,9 +11,9 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<FetchUser>((event, emit) async {
       await _getUser(emit);
     });
-    on<FetchUserMoc>((event, emit) async {
-      await _getUserMoc(emit);
-    });
+    // on<FetchUserMoc>((event, emit) async {
+    //   await _getUserMoc(emit);
+    // });
   }
 
   Future<void> _getUser(Emitter<UserState> emit) async {
@@ -26,13 +26,13 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
   }
 
-  Future<void> _getUserMoc(Emitter<UserState> emit) async {
-    emit(UserLoading());
-    try {
-      final List<User> user = await userRepository.getUserMoc();
-      emit(UserLoaded(user: user));
-    } catch (e) {
-      emit(UserError(errorMsg: e.toString()));
-    }
-  }
+  // Future<void> _getUserMoc(Emitter<UserState> emit) async {
+  //   emit(UserLoading());
+  //   try {
+  //     final List<User> user = await userRepository.getUserMoc();
+  //     emit(UserLoaded(user: user));
+  //   } catch (e) {
+  //     emit(UserError(errorMsg: e.toString()));
+  //   }
+  // }
 }

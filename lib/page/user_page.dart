@@ -50,7 +50,7 @@ class _UserPageState extends State<UserPage> {
                     child: ListTile(
                       leading: const Icon(Icons.person),
                       title: Text(obj.title ?? '--'),
-                      subtitle: Text(obj.userId.toString()),
+                      // subtitle: Text(obj.userId.toString()),
                     ),
                   );
                 },
